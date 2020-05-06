@@ -6,7 +6,7 @@ RUN apk update && \
         g++ gcc libgcc libstdc++ linux-headers make python && \
     rm -rf /var/cache/apk/*
 
-RUN npm i --unsafe-perm -g gridsome@0.7.13
+RUN npm i --unsafe-perm -g gridsome@0.7.14
 
 RUN mkdir -p /app
 WORKDIR /app
