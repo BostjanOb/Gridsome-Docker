@@ -1,10 +1,9 @@
-FROM node:12-alpine
+FROM node:12
 
-RUN apk update && \
-    apk upgrade && \
-    apk --no-cache add util-linux git autoconf \
-        g++ gcc libgcc libstdc++ linux-headers make python && \
-    rm -rf /var/cache/apk/*
+RUN apt-get update && \
+    apt-get upgrade && \
+    apt-get install -y libglu1 build-essential && \
+    apt-get clean
 
 RUN npm i --unsafe-perm -g gridsome@0.7.14
 
